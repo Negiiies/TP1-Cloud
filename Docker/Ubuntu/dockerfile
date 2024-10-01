@@ -1,0 +1,15 @@
+FROM ubuntu
+# Install SSH 
+
+RUN apt update && apt-get install -y openssh-server ssh && rm -rf /var/lib/apt/lists/*
+
+
+
+# Configure SSH 
+RUN mkdir /var/run/sshd 
+EXPOSE 22 
+COPY random.txt /home/ubuntu/
+
+# Start SSH server 
+CMD ["/usr/sbin/sshd", "-D"]
+

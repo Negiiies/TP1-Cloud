@@ -1,0 +1,4 @@
+CREATE TABLE IF NOT EXISTS my_table (
+    id INT(11) AUTO_INCREMENT PRIMARY KEY,
+    data_column VARCHAR(255) NOT NULL
+);
